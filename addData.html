@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Person Details</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body>
+    <img class=" w-400 h-[729px]  " src="./assets/blood donation.jpg" alt="">
+    <div class="relative text-center mt-[-35%] ml-[38%] mr-[38%] bg-white rounded-3xl p-10 shadow-2xl">
+        <h1 class="text-[20px] font-bold ">Donor Details</h1><br>
+        <label for="name">Name</label>
+        <input type="text" placeholder="Enter your name" class="border rounded text-center w-50 mr-3"><br><br>
+        <label for="age">Age</label>
+        <input type="number" placeholder="Enter your Age" class="border rounded text-center w-50"><br><br>
+        <label for="Phone no.">Phone</label>
+        <input type="number" placeholder="Enter your Phone no." class="border rounded text-center w-50 mr-[18px]"><br><br>
+        <label for="Sex">Sex</label>
+        <select name="Sex" id="Sex" class="border rounded text-center w-50 ml-[4px]">
+            <option value="Male">Male</option>
+            <option value="Women">Women</option>
+        </select><br><br>
+        <label for="Blood group">Blood</label>
+        <select name="Blood type" id="Blood type" class="border rounded text-center w-50 mr-4">
+            <option value="A+">A+</option>
+            <option value="Blood type">A-</option>
+            <option value="Blood type">B+</option>
+            <option value="Blood type">B-</option>
+            <option value="Blood type">O+</option>
+            <option value="Blood type">O-</option>
+            <option value="Blood type">AB+</option>
+            <option value="Blood type">AB-</option>
+        </select>
+    </div>
+</body>
+
+</html>
