@@ -1,11 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
+
 <body>
-    <h1>home</h1>
+    <div>
+        <div class="relative">
+            <!-- bg image -->
+            <img class="w-[1460px] absolute " src="./assets/blood donation home page image.jpeg">
+            <!-- heading -->
+            <h1 class="absolute mt-25 ml-190 text-[50px] font-bold text-gray-500">
+                Blood Bank
+            </h1>
+            <!-- sub head -->
+            <p class="absolute mt-45 ml-191 text-[20px] font-bold ">Every drop of <span
+                    class="text-red-600">blood</span> counts towards saving a life</p>
+        </div>
+
+        <div id="donorDetails"></div>
+    </div>
 </body>
+
 </html>
