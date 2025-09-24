@@ -1,24 +1,34 @@
-const http =require('http')
-const url =require('url')
-const fs =require('fs')
-const {mongoClient,objectId} =require('mongodb')
-const querystring =require('querystring')
+// server.js
+const { MongoClient } = require("mongodb");
 
-const client = new mongoClient("//127.0.0.1:27017/")
-const PORT = 3000;
-const app=http.createServer(async(req,res)=>{
-    // create db
-    const db=client.db("bloodDonation")
+const url = "mongodb://127.0.0.1:27017"; 
+const client = new MongoClient(url);
 
-    // create collection
-    const collection =db.collection('donorDetails')
+// Database name
+const dbName = "bloodDonation";
 
-    const{pathname}= url.parse(req.url);
-    
-    // file loading
-    if(pathname =='/'){
-        res.writeHead(200,{"content-Type":"text/html"});
-        res.end(fs.readFileSync("./home.html"))
+async function main() {
+    try {
+        // Connect the client
+        await client.connect();
+        console.log("✅ Connected successfully to MongoDB");
+
+        const db = client.db(dbName);
+        const collection = db.collection("donors");
+
+        // Example: Insert a document
+        const result = await collection.insertOne({ name: "Abin", age: 22 });
+        console.log("Inserted:", result.insertedId);
+
+        // Example: Find documents
+        const users = await collection.find().toArray();
+        console.log("Users:", users);
+
+    } catch (err) {
+        console.error("❌ Connection error:", err);
+    } finally {
+        await client.close();
     }
-})
+}
 
+main();
